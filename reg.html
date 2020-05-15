@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/reg.css">
+
+</head>
+
+<body>
+    <header>
+        <div id="mainHeader">
+            <div class="logo floatLeft">
+                <h1>FARFETCH</h1>
+            </div>
+            <div class="helpContainer floatRight">
+                <div class="needHelp">
+                    需要帮助?
+                </div>
+                <div class="tel">
+                    <a href="#" target="_blank">
+                        <i class="iconfont icon-dianhua-b"></i>
+                        <span>400 656 5538</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div id="regCon">
+                <div class="regCenter">
+                    <div class="regTit">
+                        <h1>注册</h1>
+                    </div>
+                    <div class="regContainer">
+                        <p>用户名</p>
+                        <div><input id="userName" type="text" placeholder="6-16位字母、数字和下划线组合，区分大小写"><span></span></div>
+                        <p>电话</p>
+                        <div><input type="text" id="userNumber" placeholder="请输入11位有效手机号"><span></span></div>
+                        <p>邮箱</p>
+                        <div><input type="text" id="userMail" placeholder="请输入有效邮箱地址"><span></span></div>
+                        <p>密码</p>
+                        <div><input type="password" id="userPass" placeholder="10-16位，必须包含数字和字母"><span></span></div>
+                        <p>确认密码</p>
+                        <div><input id="userPass2" type="password" placeholder="请确认密码"><span></span></div>
+                        <div id="msgBox"></div>
+                    </div>
+                    <div class="goReg">
+                        <button class="goRegBtn">
+                            注册
+                            <i class="iconfont icon-suo1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="bottom">
+            <div class="logDisclaimer">
+                <div class="record">
+                    <a href="#" target="_blank"> 沪ICP备15053728</a>
+                    <a href="#" target="_blank"> 沪通信管自贸[2019] 25号 </a>
+                    <a target="_blank" href="#">
+                        <img class="mr10 disclaimer-cn-gov-icon"
+                            src="https://cdn-static.farfetch-contents.com/v2-33-20121-549/static/images/icons/icon_cn.png"
+                            alt="beian gov logo">
+                        <span> 沪公网安备 31010602001511号 </span>
+                    </a>
+                </div>
+                <div class="license clear_fix">
+                    <p>珐菲琦(上海)电子商务有限公司 </p>
+                    <span>|</span>
+                    <a href="#" target="_blank">营业执照</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    let isRight = [0,0,0,0,0,0];
+    let oUser =document.getElementById("userName")
+    let oNumber = document.getElementById("userNumber");
+    let oMail = document.getElementById("userMail");
+    let oPass =document.getElementById("userPass");
+    let oPass2 = document.getElementById("userPass2");
+    let oBtnReg = document.getElementsByClassName("goRegBtn")[0];
+    
+    $(function(){
+        oUser.onblur = function () {
+        isUser();
+    }
+
+    oNumber.onblur=function(){
+        isNumber();
+        if (isRight[1] = 1) {
+            hasNumber();}
+    }
+
+    oMail.onblur = function () {
+        isMail();
+    }
+
+    oPass.onblur = function () {
+        isPass();
+    }
+
+    oPass.onchange = function () {
+        isRight[3] = 0;
+        isPass2();
+    }
+
+    oPass2.onblur = function () {
+        isPass2();
+    }
+    })
+    
+
+    oBtnReg.onclick = function () {
+        let sum = 0;
+        isRight.forEach(item => {
+            sum += item;
+        });
+        if (sum == 6) {
+            $.ajax({
+                type:"post",
+                url:"./php/addUser.php",
+                data:{"userName":oUser.value,"userNumber":oNumber.value,"userMail":oMail.value,"userPass":oPass.value},
+                success:
+                function (str) {
+                    if (str == "1") { $("#msgBox").html("注册成功，请前往<a href='login.html'>登录</a>") }
+                    else if (str == "0") { $("#msgBox").html( "注册失败，请重新注册") }}
+                })
+                 
+        }
+        
+    }
+
+    function isUser() {
+        let reg = /^\w{6,16}$/;
+        if (reg.test(oUser.value)) {
+            isRight[0] = 1;
+            oUser.nextElementSibling.style.color = "green";
+            oUser.nextElementSibling.innerHTML = "√";
+        } else {
+            isRight[0] = 0;
+            oUser.nextElementSibling.style.color = "red";
+            oUser.nextElementSibling.innerHTML = "×，用户名格式不正确";
+        }
+    }
+
+    function isNumber() {
+        let reg = /^1\d{10}$/;
+        if (reg.test(oNumber.value)) {
+            isRight[1] = 1;
+            oNumber.nextElementSibling.style.color = "green";
+            oNumber.nextElementSibling.innerHTML = "√";
+        } else {
+            isRight[1] = 0;
+            oNumber.nextElementSibling.style.color = "red";
+            oNumber.nextElementSibling.innerHTML = "×，手机号码格式不正确";
+        }
+    }
+
+    function isMail() {
+        let reg = /^\w{3,20}@\w{2,8}\.\w+$/;
+        if (reg.test(oMail.value)) {
+            isRight[2]=1;
+            oMail.nextElementSibling.style.color = "green";
+            oMail.nextElementSibling.innerHTML = "√";
+        } else {
+            isRight[2]=0;
+            oMail.nextElementSibling.style.color = "red";
+            oMail.nextElementSibling.innerHTML = "×，邮箱格式不正确";
+        }
+    }
+
+    function isPass(){
+        let reg=/^[a-zA-Z0-9]{6,16}$/;
+        let regNum=/^\d{6,16}$/;
+        let regLet=/^[a-zA-Z]{6,16}$/;
+        if(reg.test(oPass.value) && !regNum.test(oPass.value) && !regLet.test(oPass.value)){
+            isRight[3]=1;
+            oPass.nextElementSibling.style.color="green";
+            oPass.nextElementSibling.innerHTML="√";
+        }else{
+            isRight[3]=0;
+            oPass.nextElementSibling.style.color="red";
+            oPass.nextElementSibling.innerHTML="×，密码格式不正确";
+        }
+    }
+
+    function isPass2(){
+        if(oPass2.value==oPass.value){
+            isRight[4]=1;
+            oPass2.nextElementSibling.style.color="green";
+            oPass2.nextElementSibling.innerHTML = "√";
+        }else{
+            isRight[4]=0;
+            oPass2.nextElementSibling.style.color="red";
+            oPass2.nextElementSibling.innerHTML = "×，两次密码输入不一致";
+        }
+    }
+
+    function hasNumber(){
+        $.get("./php/checkNumber.php","userNumber="+oNumber.value,function(str){
+            if(str=="1"){
+                isRight[5]=0;
+                oNumber.nextElementSibling.style.color="red"
+                oNumber.nextElementSibling.innerHTML="该手机号已被注册,请重新注册";
+            }else if(str=="0"){
+                isRight[5]=1;
+                oNumber.nextElementSibling.style.color="green"
+                oNumber.nextElementSibling.innerHTML="该手机号可以使用，请继续注册";}
+            })
+       
+        }
+
+        
+
+   
+</script>

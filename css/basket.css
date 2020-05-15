@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* common */
+#shoppingBag{width:100%;}
+
+/* main */
+.bagBox{display: flex;justify-content: space-between;}
+.sectionBag{box-sizing: border-box;padding:0 35px;margin-bottom: 40px;}
+.bagTit{margin:48px 0;height:27px;position: relative;}
+.bagTit h1{position: absolute;left:50%;transform: translateX(-50%);font-size:20px;font-weight: bold;}
+.bagTit a{float:right;color:black;font-size: 14px;text-decoration: underline;}
+.bagWithItems{width:883px;box-sizing: border-box;border: 1px solid lightgray;}
+.itemGroupHeader{box-sizing: border-box;padding:12px;height:61px;width:881px;font-size: 12px;border-bottom: 1px solid lightgray;}
+.checkAllBox{width:450px;height:40px;box-sizing: border-box;padding:10px 0;font-weight: bold;font-size:18px;}
+.checkAll{height:16px;width:16px;margin-right:10px;}
+.shippingInfo{margin-top: 10px;}
+.shippingInfo a{color:black;font-weight: bold;}
+.listShow{height:197px;box-sizing: border-box;padding:24px 12px 12px;}
+.checkBox{position: relative;top: 50%;transform: translateY(-50%);margin-right:5px;}
+.checkBox input{height:16px;width:16px;display: block;}
+.itemImg{height:160px;width:120px;box-sizing: border-box;margin:0 10px;}
+.itemImg img{width:100%;height:100%;}
+.itemDetail{width:682px;;margin:0 6px;}
+.itemBrand{height:160px;width:222px;font-size: 14px;margin:0 20px;}
+.itemBrand a{color:black;}
+.itemBrand a:hover{text-decoration: underline;}
+.itemBrand p{margin:15px 0;}
+.itemBrand span{font-size: 12px;}
+.itemPrice{height:160px;width:140px;margin:0 10px;font-size: 18px;font-weight: bold;}
+.itemNumber{height:160px;width:231px;font-size: 14px;font-weight: bold;}
+.itemSize{margin-bottom: 24px;}
+.quantityBox{width:231px;color:lightgoldenrodyellow;margin-top:10px}
+.quantityBox input{display: block;float: left;height:30px;width:30px;font-weight: bold;font-size: 18px;}
+.quantityBox input:nth-child(2){width:40px;height:26px;margin:0 10px;text-align: center;font-size: 14px;}
+.quantityBox .delBtn{margin-left:10px;width:40px;font-size: 14px;}
+.account{height:315px;width:300px;box-sizing: border-box;border:1px solid lightgray}
+.summary{box-sizing: border-box;padding:24px;}
+.summary caption{height:28px;font-size: 22px;font-weight: bold;margin-bottom: 24px;text-align: left;}
+.summary tr{height:34px;}
+.summary td{width:124px;}
+.goCheck{position: relative;background: black;margin-top:24px;border-radius: 5px;}
+.goCheck a{display: block;color:#fff;font-size:18px;font-weight: bold;box-sizing: border-box;width:248px;height:44px;padding:10px 0;text-align: center;}
+.goCheck a .iconfont{position: absolute;top:50%;transform:translateY(-50%) ;right:36px;}
+.goCheck a:hover .iconfont{transition: .5s;right:30px}

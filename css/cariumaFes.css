@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* common */
+#skiPage,#cariumaShoe,#goShop,#story{width:100%}
+
+/* main */
+#skiPage{box-sizing: border-box;padding-top:48px}
+.skiPageCon{height:592px;width:1053px;position: relative;left:50%;transform: translateX(-50%);}
+.skiPageCon img{width:100%;height:100%;}
+.skiTit{height: 248px;box-sizing: border-box;display: flex;flex-direction: column;align-items: center;padding:24px 0 24px 0;}
+.skiTit h2{font-size: 40px;font-weight: bold;margin-bottom: 20px;}
+#cariumaShoe{height:946px;box-sizing: border-box;padding:0 48px;}
+.shoesShow{display: flex;height:936px;justify-content: space-between;flex-wrap: wrap;}
+.shoesShow article{height:400px;width:283px;display: flex;flex-direction: column;align-items: center;}
+.shoeImg{display: block;height:313px;width:235px;margin-bottom: 38px;}
+.shoeImg img{height:100%;width:100%;}
+.shoeDetail{height:78px;width:223px;display: flex;flex-direction: column;align-items: center;}
+.shoeDetail h5{font-size: 14px;font-weight: bold;}
+.shoeDetail em{margin-bottom: 10px;}
+.shoeDetail b{font-size: 18px;}
+#goShop {position: relative;height:44px;}
+#goShop a{position: absolute;left:50%;transform: translateX(-50%);display: block;height:44px;width:150px;border-radius: 4px;line-height: 44px;text-align: center;background: black;color:white;font-weight: bold;font-size: 18px;}
+#story{height:583px;}
+.storyCon{height:437px;padding:48px;display: flex;justify-content: space-between;}
+.storyTxt{width:390px;height:437px;display: flex;flex-direction: column;align-items: center;justify-content: center;}
+.storyTxt h3{font-size:20px;font-weight: bold;}
+.storyTxt p{height:100px;width:390px;}
+.storyPic{width:778px;height:437px;}
+.storyPic img{height:100%;width:100%;}

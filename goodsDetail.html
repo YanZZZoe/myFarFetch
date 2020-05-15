@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/goodsDetail.css">
+</head>
+
+<body>
+    <header>
+        <div id="head">
+            <div class="titleAll">
+                <div class="titleLeft">
+                    <p class="place floatLeft">
+                        <i class="iconfont icon-guoqi"></i>
+                        <i class="iconfont icon-icon"></i>
+                    </p>
+                    <a class="women" href="#">女士</a>
+                    <a class="men" href="#">男士</a>
+                    <a class="kids" href="#">儿童</a>
+                </div>
+                <a target="_blank" href="#" title="FARFETCH主页">
+                    <h1>FARFETCH</h1>
+                </a>
+
+                <div class="titleRight">
+                    <a target="_blank" href="login.html" title="登录页面">
+                        <i class="iconfont icon-denglu"></i>
+                    </a>
+                    <a target="_blank" href="#" title="心愿单">
+                        <i class="iconfont icon-start"></i>
+                    </a>
+                    <a target="_blank" href="basket.html" title="购物篮">
+                        <i class="iconfont icon-suo"></i>
+                    </a>
+                    <span></span>
+                </div>
+            </div>
+            <div class="navWrap">
+                <div class="nav">
+                    <ul class="navCon">
+                        <li>新近单品</li>
+                        <li>按主题选购</li>
+                        <li>品牌</li>
+                        <li>服装</li>
+                        <li>鞋履</li>
+                        <li>包袋</li>
+                        <li>首饰</li>
+                        <li>典藏臻品</li>
+                        <li>时尚宝典</li>
+                        <li>折扣</li>
+                    </ul>
+        
+                </div>
+                <div class="subNav">
+                    <ul>
+                        <li><a href="#">时尚新品</a></li>
+                        <li><a href="#">新近单品</a></li>
+                        <li><a href="#">新锐设计师品牌</a></li>
+                        <li><a href="#">新季热映</a></li>
+                        <li><a href="#">官方合作发售与联名系列</a></li>
+                    </ul>
+                    <div class="asideImg">
+                        <div class="imgBox">
+                            <img src="img/subNav1.png">
+                            <i>重磅热品</i>
+                            <h4>官方合作发售与联名系列</h4>
+                            <h5>即刻探索</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="search">
+                    <input placeholder="搜索" type="text" class="floatLeft">
+                    <button type="submit" class="floatLeft">
+                        <i class="iconfont icon-fangdajing"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <section>
+            <div id="bannerSwiper">
+                <div class="banner1">
+                    <p>请查收Farfetch首席执行官的问候</p>
+                    <p>我们与合作伙伴正全力确保包裹安全送到您家</p>
+                    <a href="#" target="_blank">了解更多</a>
+                </div>
+                <div class="banner2">
+                    <p>您每一笔订单的配送与退货都将助力 Farfetch 碳中和计划</p>
+                    <a href="#" target="_blank">了解详情</a>
+                </div>
+            </div>
+            <div id="goodsShow">
+                <div class="goodsShowCon clear_fix">
+                    <div class="showImg  floatLeft">
+                        <div class="showImgBox">
+                        </div>
+                        <span class="leftArrow"><i class="iconfont icon-icon-yjt"></i></span>
+                        <span class="rightArrow"><i class="iconfont icon-icon1"></i></span>
+                    </div>
+                    <div class="goodsAdd floatLeft">
+                        <div class="goodsAddBox">
+                        </div>
+                        <div class="addCart">
+                            <button class="cart">加入购物袋
+                                <i class="iconfont icon-suo"></i>
+                            </button>
+                            <button class="wishList">
+                                心愿单
+                                <i class="iconfont icon-start"></i>
+                            </button>
+                        </div>
+                        <div class="cartMsg"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="goodsDetails">
+                <div class="goodsDetCon">
+                    <div class="goodsDetTxt">
+
+                    </div>
+                    <div id="box">
+                        <div id="mirror-box"></div>
+                        <div id="show-box"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="newsLetter">
+            <div class="letterTxt">
+                <h2>好事就想与您分享</h2>
+                <p>想要独家折扣抢先逛？想要获取量身推荐的新品？那就订阅我们的电子报吧！</p>
+                <form class="mail">
+                    <div class="genderBtn">
+                        <input type="radio" name="gender" id="woman" checked="checked">
+                        <label for="woman">女士</label>
+                        <input type="radio" name="gender" id="man">
+                        <label for="man">男士</label>
+                    </div>
+                    <div class="mailAdd">
+                        <input type="text" placeholder="OK，这是我的电邮地址">
+                        <a href="#">订阅电子报
+                            <i class="iconfont icon-icon1"></i>
+                        </a>
+                    </div>
+                    <p class="mailCancel">若要退订，在电邮底部点击“取消订阅”即可。</p>
+                    <div class="termsContainer">
+                        <input class="validateCheckbox floatLeft" type="checkbox" value="true">
+                        <p class="floatLeft">您接受并同意遵守我们的<span>&nbsp;</span>
+                            <a href="#" target="_blank">条款与条件</a>、<a href="#" target="_blank">隐私政策</a>、以及&nbsp;<a
+                                href="#" target="_blank">个人敏感信息政策</a>&nbsp;。</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="bottom">
+            <div class="bottomCon clear_fix">
+                <div class="btmConApp floatLeft">
+                    <h5>FARFETCH APP</h5>
+                    <div class="appSys">
+                        <a href="#" target="_blank">
+                            <i class="iconfont icon-shouji"></i>
+                            <span>Farfetch App适用于iOS和安卓系统 </span>
+                        </a>
+                    </div>
+                    <h5>付款方式</h5>
+                    <div class="pay clear_fix">
+                        <img src="img/alipay.png" title="Alipay">
+                        <img src="img/wechat.png" title="Wechat">
+                        <img src="img/union.png" title="Union Pay">
+                        <img src="img/master.png" title="Master Card">
+                        <img src="img/visa.png" title="Visa Card">
+                    </div>
+                </div>
+                <div class="btmConCty floatLeft">
+                    <h5>目的地，货币与语言</h5>
+                    <div class="country">
+                        <a href="#">
+                            <i class="iconfont icon-guoqi"></i>
+                            <span>中国大陆</span>
+                            <span>CNY ￥</span>
+                        </a>
+                    </div>
+                    <h5>关注FARFETCH</h5>
+                    <div class="follow clear_fix">
+                        <i class="iconfont icon-weixin"></i>
+                        <i class="iconfont icon-weibo"></i>
+                        <i class="iconfont icon-youku"></i>
+                        <i class="iconfont icon-igm"></i>
+                    </div>
+                </div>
+                <div class="service floatLeft">
+                    <h5>客服中心</h5>
+                    <a href="#">联系我们</a>
+                    <a href="#">服务信息的更新</a>
+                    <a href="#">订单与配送</a>
+                    <a href="#">支付与商品价格</a>
+                    <a href="#">退货与退款</a>
+                    <a href="#">常见问题</a>
+                    <a href="#">条款与条件</a>
+                    <a href="#">隐私政策</a>
+                    <a href="#">个人敏感信息政策</a>
+                    <a href="#">无障碍网络建设</a>
+                    <a href="#">近期购物须知</a>
+                </div>
+                <div class="aboutus floatLeft">
+                    <h5>关于FARFETCH</h5>
+                    <a href="#">关于我们</a>
+                    <a href="#">投资人</a>
+                    <a href="#">Farfetch合作买手店</a>
+                    <a href="#">联盟营销</a>
+                    <a href="#">Farfetch服务保证</a>
+                    <a href="#">招聘求职</a>
+                    <a href="#">Farfetch App</a>
+                    <a href="#">Farfetch累计评价</a>
+                    <a href="#">网站地图</a>
+                    <a href="#">Farfetch至善前瞻</a>
+                </div>
+
+            </div>
+            <div class="disclaimer">
+                <span class="regCode">"farfetch"以及“farfetch”图形均为Farfetch.com Limited的商标，且在世界多个地点均有注册。</span>
+                <div class="record">
+                    <a href="#" target="_blank"> 沪ICP备15053728</a>
+                    <a href="#" target="_blank"> 沪通信管自贸[2019] 25号 </a>
+                    <a target="_blank" href="#">
+                        <img class="mr10 disclaimer-cn-gov-icon"
+                            src="https://cdn-static.farfetch-contents.com/v2-33-20121-549/static/images/icons/icon_cn.png"
+                            alt="beian gov logo">
+                        <span> 沪公网安备 31010602001511号 </span>
+                    </a>
+                </div>
+                <div class="license clear_fix">
+                    <p>珐菲琦(上海)电子商务有限公司 </p>
+                    <span>|</span>
+                    <a href="#" target="_blank">营业执照</a>
+                </div>
+                <div class="copyright">
+                    <span>© Copyright 2020 Farfetch UK Limited. 版权所有</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/cookie.js"></script>
+<script src="js/index.js"></script>
+<script>
+
+    let goodsId = location.search.split("=")[1];
+    let oBox = document.getElementById("box");
+    let oMirrorBox = document.getElementById("mirror-box");
+    let oShowBox = document.getElementById("show-box");
+    let mirrorWidth = oMirrorBox.offsetWidth;
+    let mirrorHeight = oMirrorBox.offsetHeight;
+    let leftV = parseFloat($(".showImgBox").css("left"));
+    let userNumber=getCookie("userNumber");
+    console.log(typeof(userNumber))
+
+
+    function getData() {
+        $.get("./php/getGoodsInfo.php", "goodsId=" + goodsId, function (data) {
+            showData(data)
+        }, "json")
+    }
+
+    function showData(data) {
+        let htmlImgs = `
+        <img src="${data.beiyong1}" alt="">
+        <img src="${data.beiyong2}" alt="">
+        <img src="${data.beiyong3}" alt="">
+        <img src="${data.beiyong4}" alt="">`
+        $(".showImgBox").html(htmlImgs);
+
+        let htmlTxt =
+            `<h3>${data.beiyong6}</h3>
+             <p>${data.goodsName}</p>
+             <em>¥ ${data.goodsPrice}<i>(含税价)</i></em>`
+
+        $(".goodsAddBox").html(htmlTxt);
+
+        let htmlDet =
+            `<h3>${data.beiyong6}</h3>
+             <p>${data.goodsName}</p>
+             <em>${data.goodsDesc}</em>
+             <i>成分<br>${data.beiyong5}</i>`
+        $(".goodsDetTxt").html(htmlDet);
+
+
+        let s=`${data.beiyong4}`;
+        $("#box").css({"backgroundImage":"url("+ s +")"});
+        $("#show-box").css({"backgroundImage":"url("+ s +")"})
+    }
+
+    oBox.onmousemove = function (event) {
+        let e = event || window.event;
+        let left1 = e.pageX - oBox.offsetLeft - mirrorWidth / 2;
+        let top1 = e.pageY - oBox.offsetTop - mirrorHeight / 2;
+        if (left1 < 0) { left1 = 0; } else if (left1 + mirrorWidth > oBox.offsetWidth) {
+            left1 = oBox.offsetWidth - mirrorWidth;
+        }
+        if (top1 < 0) { top1 = 0 } else if (top1 + mirrorHeight > oBox.offsetHeight) {
+            top1 = oBox.offsetHeight - mirrorHeight;
+        }
+        oMirrorBox.style.left = left1 + "px";
+        oMirrorBox.style.top = top1 + "px";
+        oShowBox.style.backgroundPosition = `-${left1}px -${top1}px`;
+    }
+
+
+    $(".leftArrow").click(function () {
+        leftV -= 345;
+        if (leftV < -1035) { leftV = 0 }
+        $(".showImgBox").css("left", leftV + "px");
+    })
+
+    $(".rightArrow").click(function () {
+        leftV += 345;
+        if (leftV > 0) { leftV = -1035; }
+        $(".showImgBox").css("left", leftV + "px");
+    })
+
+    $(".cart").click(function(){
+        $.post("./php/addShoppingCart.php",{
+            "vipName":userNumber,
+            "goodsId":goodsId,
+            "goodsCount":1
+            },
+            (data)=>{
+                if(data==1){$(".cartMsg").css("color","green").html("添加成功，请继续购物")}
+                   else {$(".cartMsg").css("color","red").html("添加失败")} 
+                
+            }
+        )
+    })
+
+    $(function () { getData() })
+
+</script>

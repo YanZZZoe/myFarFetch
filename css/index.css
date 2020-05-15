@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* common */
+#bannerWrap,#vip,#story,#buyer,#new,#yellow,#gift{width:100%}
+
+/* banner */
+#bannerWrap{height:366px;padding:48px 48px 0;box-sizing: border-box;}
+.bannerCon{height:318px;position: relative;overflow: hidden;}
+.bannerCon img{position: absolute;left:50%;margin-left: -637px;}
+/* vip */
+#vip{height:145px;box-sizing: border-box;padding-top:24px;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+#vip a{margin:10px 0;color:black;}
+#vip a:nth-child(1){font-size:20px;font-weight: bold;}
+/* story */
+#story{height:882px;box-sizing: border-box;padding:48px 0 0 55px;}
+.storyTxt{height:192px;box-sizing: border-box;padding-top:24px;}
+.storyTxt a{display: flex;flex-direction: column;justify-content: center;align-items: center;height:168px;padding-bottom: 48px;box-sizing: border-box;color:black;}
+.storyTxt h3{height:32px;margin-bottom: 24px;font-size: 28px;font-weight: bold;}
+.storyTxt p{height:64px;width:632px;text-align: center;}
+/* buyer */
+#buyer{height:762px;margin-bottom: 36px;}
+.buyerCon{height:762px;box-sizing: border-box;padding:48px 48px 24px;display: flex;justify-content: space-between;}
+.buyerConL{display: flex;flex-direction: column;}
+.buyerConL a{height:571px;width:571px;display: block;}
+.buyerConL a img{width:100%;height:100%;}
+.buyerCar a{display:block;color:black}
+.buyerCar h2{font-size: 22px;font-weight: bold;margin:20px 0 15px 0}
+.buyerCar h3{font-size: 18px;}
+.buyerConR a{display: block;height:690px;width:571px;overflow: hidden;background:url(../img/buyerConR.png);background-size:cover;}
+/* new */
+#new{height:700px;padding:0 48px;box-sizing: border-box;}
+#new h3{width:100%;margin-top: 48px;font-size: 22px;font-weight: bold;height:28px;line-height: 28px;text-align: center;}
+.newGoods{width:100%;}
+.newGoodsList{height:492px;padding:48px 48px 0;display: flex;justify-content: space-between;}
+.newGoodsList a{display: block;height:313px;width:235px;}
+.newGoodsList a img{width:100%;height:100%;}
+.newGoodsList figcaption{width:223px;height:78px;margin:48px 6px 0;display: flex;flex-direction: column;align-items: center;cursor: pointer;}
+.newGoodsList figcaption h4{font-size: 18px;font-weight: bold;}
+.newGoodsList figcaption span{font-size: 18px;margin-top: 10px;}
+.goShop{width:100%;display: flex;justify-content: center;}
+.goShop a{display: block;width:100px;height:44px;font-size:18px;color: #fff;background: #222;border-radius: 5px;font-weight: bold;line-height: 44px;text-align: center;}
+/* yellow */
+.yellowCon{width:100%;height:555px;box-sizing: border-box;padding:48px 48px 24px;display: flex;justify-content: space-between;}
+.yellowCon figure{height:460px}
+.yellowCon a{display: block;height: 373px;width: 373px;}
+.yellowCon a img{width:100%;height:100%;}
+.yellowCon figcaption{display: flex;align-items: center;flex-direction: column;cursor: pointer;padding:0 48px;box-sizing: border-box;width:373px;}
+.yellowCon figcaption h3{font-size: 20px;font-weight: bold;margin:20px 0 5px 0;}
+.yellowCon figcaption p{height:43px;}

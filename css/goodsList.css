@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/* common */
+#fashionPage,#skirtSwiper,#greenSkirt{width:100%}
+
+/* main */
+#fashionPage{box-sizing: border-box;padding-top:48px}
+.fashionPageCon{height:592px;width:1053px;position: relative;left:50%;transform: translateX(-50%);}
+.fashionPageCon img{width:100%;height:100%;}
+.fashionTit{height: 248px;box-sizing: border-box;display: flex;flex-direction: column;align-items: center;padding:24px 0 24px 0;}
+.fashionTit h2{font-size: 40px;font-weight: bold;margin-bottom: 20px;}
+#skirtSwiper{height:650px;box-sizing: border-box;padding:48px;}
+.skirtSwiperCon{display: flex;flex-direction: column;align-items: center;}
+.skirtSwiperCon h3{font-size: 34px;font-weight: bold;margin-bottom: 24px;}
+
+/* 轮播图 */
+.skirtBox{position: relative;width:692px;height:468px;overflow: hidden;}
+
+#greenSkirt{box-sizing: border-box;padding:0 48px;}
+.greenSkirtShow{display: flex;min-height:1872px;justify-content: space-between;flex-wrap: wrap;}
+.greenSkirtShow article{height:400px;width:283px;display: flex;flex-direction: column;align-items: center;}
+.greenSkirtImg{display: block;height:313px;width:235px;margin-bottom: 38px;}
+.greenSkirtImg img{height:100%;width:100%;}
+.greenSkirtDetail{height:78px;width:223px;display: flex;flex-direction: column;align-items: center;}
+.greenSkirtDetail h5{font-size: 14px;font-weight: bold;}
+.greenSkirtDetail em{margin-bottom: 10px;}
+.greenSkirtDetail b{font-size: 18px;}

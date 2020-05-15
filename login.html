@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <header>
+        <div id="mainHeader">
+            <div class="logo floatLeft">
+                <h1>FARFETCH</h1>
+            </div>
+            <div class="helpContainer floatRight">
+                <div class="currency">
+                    <i class="iconfont icon-guoqi"></i>
+                    <span>CN/CNY￥</span>
+                </div>
+                <div class="needHelp">
+                    需要帮助?
+                </div>
+                <div class="tel">
+                    <a href="#" target="_blank">
+                        <i class="iconfont icon-dianhua-b"></i>
+                        <span>400 656 5538</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div id="loginCon">
+                <div class="loginCenter">
+                    <div class="loginTit">
+                        <h1>登录</h1>
+                    </div>
+                    <div class="loginWechat">
+                        <a href="#" target="_blank">
+                            微信登录
+                            <i class="iconfont icon-weixin"></i>
+                        </a>
+                    </div>
+                    <div class="loginContainer">
+                        <div class="customerLog">
+                            <h3>已注册用户</h3>
+                            <span>电话*</span>
+                            <div class="phoneNumber">
+                                <p>
+                                    <i class="iconfont icon-guoqi"></i>
+                                    + 86
+                                </p>
+                                <input id="userNumber" type="text">
+                            </div>
+                           
+                            <div class="password">
+                                <span>密码</span>
+                                <input type="password" id="userPass">
+                            </div>
+                            <span class="messageBox"></span>
+                            <div class="loginStatus clear_fix">
+                                <input type="checkbox" checked="checked">
+                                <p>保持登录状态</p>
+                            </div>
+                            <div class="loginNext">
+                                <button class="loginBtn">
+                                    登录
+                                    <i class="iconfont icon-suo1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="customerReg">
+                            <h3>新用户</h3>
+                            <div class="firstShop">
+                                <p>第一次在Farfetch购物吗？</p>
+                                <p>输入您的电话号码或电邮地址后继续.</p>
+                            </div>
+                            <span>电话*</span>
+                            <div class="phoneNumber">
+                                <p>
+                                    <i class="iconfont icon-guoqi"></i>
+                                    + 86
+                                </p>
+                                <input id="userNumberNew" type="text">
+
+                            </div>
+                            <span class="enterNumberNew"></span>
+                            <div class="regNext">
+                                <button class="regBtn">
+                                    继续
+                                    <i class="iconfont icon-suo1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="bottom">
+            <div class="logDisclaimer">
+                <div class="record">
+                    <a href="#" target="_blank"> 沪ICP备15053728</a>
+                    <a href="#" target="_blank"> 沪通信管自贸[2019] 25号 </a>
+                    <a target="_blank" href="#">
+                        <img class="mr10 disclaimer-cn-gov-icon"
+                            src="https://cdn-static.farfetch-contents.com/v2-33-20121-549/static/images/icons/icon_cn.png"
+                            alt="beian gov logo">
+                        <span> 沪公网安备 31010602001511号 </span>
+                    </a>
+                </div>
+                <div class="license clear_fix">
+                    <p>珐菲琦(上海)电子商务有限公司 </p>
+                    <span>|</span>
+                    <a href="#" target="_blank">营业执照</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/cookie.js"></script>
+<script>
+    $("#userNumberNew").blur(function () {
+        hasNumber()
+    })
+
+    function hasNumber() {
+        $.get("./php/checkNumber.php", "userNumber=" + $("#userNumberNew").val(), function (str) {
+            if (str == "1") {
+                $(".enterNumberNew").css("color", "red");
+                $(".enterNumberNew").html("该手机号已注册,请登录");
+            } else if (str == "0") {
+                $(".enterNumberNew").css("color", "green");
+                $(".enterNumberNew").html("该手机号可以使用，请继续注册")
+            }
+        })
+    }
+
+    $(".loginBtn").click(function () {
+        $.post(
+            "./php/login.php",
+            {
+                "userNumber": $("#userNumber").val(),
+                "userPass": $("#userPass").val()
+            },
+            function (obj) {
+                if (obj.status == "1") {
+                    window.open("index.html");
+                } else if (obj.status == "0") {
+                    $(".messageBox").html("手机号或密码有误，请重新输入").css({ "color": "red" });
+                }
+            },
+            "json"
+        );
+        if($(".loginStatus").find(":checkbox").prop("checked")){
+            addCookie("userNumber",$("#userNumber").val(),7)
+        }
+    });
+
+    $(".regBtn").click(function () {
+        window.open("reg.html")
+    })
+
+    
+</script>
